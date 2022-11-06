@@ -35,19 +35,17 @@ function Search() {
                 const result = await searchServices.search(debounced);
                 setSearchResult(result);
             } catch (error) {
-                console.log('Header fetch api error: '+ error);
+                console.log('Header fetch api error: ' + error);
             } finally {
                 setLoading(false);
             }
         })();
     }, [debounced]);
 
-    const handleInputValue = (e) => {
-        if (/^\s/.test(e.target.value)) {
-            console.log('handle input value');
-            searchRef.current.value = '';
-        } else {
-            setSearchValue(e.target.value);
+    const handleInputChange = (e) => {
+        const inputValue = e.target.value;
+        if (!inputValue.startsWith(' ')) {
+            setSearchValue(inputValue);
         }
     };
 
@@ -62,6 +60,7 @@ function Search() {
     };
 
     return (
+        //using a wrapper <div> tag around the reference element solves tippy error 
         <div>
             <HeadlessTippy
                 interactive
@@ -84,7 +83,7 @@ function Search() {
                         value={searchValue}
                         placeholder="Search accounts and videos"
                         spellCheck={false}
-                        onChange={handleInputValue}
+                        onChange={handleInputChange}
                         onFocus={() => setShowResult(true)}
                     />
                     {!!searchValue && !loading && (
@@ -94,11 +93,16 @@ function Search() {
                     )}
 
                     {/* loading */}
-                    {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
+                    {loading && (
+                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
+                    )}
 
                     {/* search button */}
                     <span className={cx('span-spliter')}></span>
-                    <button className={cx('search-button')}>
+                    <button
+                        className={cx('search-button')}
+                        onMouseDown={(e) => e.preventDefault()}
+                    >
                         <SearchIcon />
                     </button>
                 </div>

@@ -1,18 +1,32 @@
-
-import { Link } from 'react-router-dom'
-import classNames from 'classnames/bind'
+import { useRef } from 'react';
+import { Link } from 'react-router-dom';
+import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
-import styles from './Header.module.scss'
-import images from '~/assets/images'
+import styles from './Header.module.scss';
+import images from '~/assets/images';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
-import { CoinIcon, InboxIcon, KeyboardIcon, LanguageIcon, LiveIcon, LogOutIcon, MenuIcon, PlusIcon, QuestionIcon, MessageIcon, SettingIcon, UserIcon } from '~/components/Icons'
+import {
+    CoinIcon,
+    InboxIcon,
+    KeyboardIcon,
+    LanguageIcon,
+    LiveIcon,
+    LogOutIcon,
+    MenuIcon,
+    PlusIcon,
+    QuestionIcon,
+    MessageIcon,
+    SettingIcon,
+    UserIcon,
+} from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
+import routesConfig from '~/config/routes';
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
     {
@@ -31,31 +45,31 @@ const MENU_ITEMS = [
                     code: 'vi',
                     title: 'Tiếng Việt',
                 },
-            ]
-        }
+            ],
+        },
     },
     {
         icon: <QuestionIcon />,
         title: 'Feedback and help',
-        to: '/feedback'
+        to: '/feedback',
     },
     {
         icon: <KeyboardIcon />,
-        title: 'Keyboard shortcuts'
-    }
-]
+        title: 'Keyboard shortcuts',
+    },
+];
 
 //==user login menu===
 const userMenu = [
     {
         icon: <UserIcon />,
         title: 'View profile',
-        to: '/@username'
+        to: '/@username',
     },
     {
         icon: <CoinIcon />,
         title: 'Get Coins',
-        to: '/coin'
+        to: '/coin',
     },
     {
         icon: <LiveIcon />,
@@ -64,7 +78,7 @@ const userMenu = [
     {
         icon: <SettingIcon />,
         title: 'Setting',
-        to: '/setting'
+        to: '/setting',
     },
 
     ...MENU_ITEMS,
@@ -73,13 +87,12 @@ const userMenu = [
         icon: <LogOutIcon />,
         title: 'Log out',
         to: '/logout',
-        separate: true
+        separate: true,
     },
-]
-
+];
 
 function Header() {
-
+    const avatarRef = useRef();
 
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
@@ -88,17 +101,17 @@ function Header() {
                 break;
             default:
         }
-    }
+    };
 
-    const userLogin = true
+    const userLogin = true;
 
     return (
         <header className={cx('container')}>
             <div className={cx('wrapper')}>
                 {/* logo */}
                 <div className={cx('logo')}>
-                    <Link to="/">
-                        <img src={images.logo} alt='tiktok' />
+                    <Link to={routesConfig.home}>
+                        <img src={images.logo} alt="tiktok" />
                     </Link>
                 </div>
 
@@ -108,7 +121,7 @@ function Header() {
                 {/* Actions */}
                 <div className={cx('actions')}>
                     <Button
-                        to='/upload'
+                        to={routesConfig.upload}
                         className={cx('upload')}
                         leftIcon={<PlusIcon />}
                     >
@@ -117,7 +130,10 @@ function Header() {
                     {userLogin ? (
                         <>
                             <Tippy delay={[0, 50]} content="Messages" placement="bottom">
-                                <Link to='/message' className={cx('action-btn')}>
+                                <Link
+                                    to={routesConfig.message}
+                                    className={cx('action-btn')}
+                                >
                                     <MessageIcon />
                                 </Link>
                             </Tippy>
@@ -133,12 +149,17 @@ function Header() {
                             <Button primary>Log in</Button>
                         </>
                     )}
-                    <Menu items={userLogin ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+
+                    <Menu
+                        items={userLogin ? userMenu : MENU_ITEMS}
+                        onChange={handleMenuChange}
+                    >
                         {userLogin ? (
                             <Image
+                                ref={avatarRef}
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/efc7a898687c3447746a365097dc0482~c5_100x100.jpeg?x-expires=1667379600&x-signature=SYB3%2FkFyoHiV%2FF%2FEN0UUVxfpM98%3D"
-                                alt='user-name'
+                                alt="user-name"
                             />
                         ) : (
                             <button className={cx('menu-btn')}>
@@ -148,7 +169,7 @@ function Header() {
                     </Menu>
                 </div>
             </div>
-        </header >
+        </header>
     );
 }
 

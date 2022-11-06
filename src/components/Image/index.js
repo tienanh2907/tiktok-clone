@@ -19,6 +19,7 @@ function Image({
     return (
         <img
             className={classNames(styles.wrapper, className)}
+            ref={ref}
             src={fallback || src}
             alt={alt}
             onError={handleError}

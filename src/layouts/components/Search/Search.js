@@ -5,11 +5,11 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountItem from '~/components/Layout/AccountItem';
+import AccountItem from '~/components/AccountItem';
 import styles from './Search.module.scss';
 import { ClearIcon, SearchIcon } from '~/components/Icons';
 import { useDebounce } from '~/hooks';
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/services/searchService';
 
 const cx = classNames.bind(styles);
 
@@ -60,7 +60,7 @@ function Search() {
     };
 
     return (
-        //using a wrapper <div> tag around the reference element solves tippy error 
+        //using a wrapper <div> tag around the reference element solves tippy error
         <div>
             <HeadlessTippy
                 interactive

@@ -7,7 +7,7 @@ import HeadlessTippy from '@tippyjs/react/headless';
 
 import Avatar from '~/components/Avatar';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountPreview from '../AccountPreview';
+import AccountPreview from '~/components/AccountPreview';
 import styles from './NavAccounts.module.scss';
 
 const cx = classNames.bind(styles);
@@ -16,7 +16,7 @@ function AccountItem({ data }) {
     const handleRenderTooltip = (props) => (
         <div tabIndex="-1" {...props}>
             <PopperWrapper className={cx('preview-wrapper')}>
-                <AccountPreview data={data} />
+                <AccountPreview data={data} type="less" />
             </PopperWrapper>
         </div>
     );

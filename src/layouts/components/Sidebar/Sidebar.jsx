@@ -7,7 +7,7 @@ import {
     LiveActiveIcon,
     LiveIcon,
 } from '~/components/Icons';
-import NavAccounts from '~/components/NavAccounts';
+import NavAccounts from './NavAccounts';
 import config from '~/config';
 import Navbar, { NavbarItem } from './Navbar';
 import styles from './Sidebar.module.scss';
@@ -44,6 +44,7 @@ function Sidebar() {
                 />
             </Navbar>
             <NavAccounts label="Suggested accounts" />
+            <NavAccounts label="Following accounts" />
         </aside>
     );
 }

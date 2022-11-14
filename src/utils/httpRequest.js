@@ -9,7 +9,7 @@ export const get = async (url, options = {}) => {
         const response = await httpRequest.get(url, options);
         return response.data;
     } catch (error) {
-        console.log('Http request error: ' + error);
+        console.log(error);
     }
 };
 

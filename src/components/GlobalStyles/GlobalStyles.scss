@@ -8,7 +8,7 @@ $mainColor: rgb(22, 24, 35);
     --black: #000;
     --white: #fff;
     //Default layout
-    --default-layout-header-height: 60px;
+    --header-height: 60px;
     --default-layout-width: 1150px;
 }
 
@@ -43,7 +43,9 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizespeed;
+
     color: var(--main-color);
+
     scroll-behavior: smooth;
     overflow-y: overlay;
 }

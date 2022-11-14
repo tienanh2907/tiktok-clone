@@ -16,8 +16,9 @@ const cx = classNames.bind(styles);
 function Search() {
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
-    const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
+    const [showResult, setShowResult] = useState(true);
+    // const [error, setError] = useState('');
 
     const searchRef = useRef();
 
@@ -35,7 +36,8 @@ function Search() {
                 const result = await searchServices.search(debounced);
                 setSearchResult(result);
             } catch (error) {
-                console.log('Header fetch api error: ' + error);
+                // setError('Có loi');
+                console.log('Search fetch api error: ' + error);
             } finally {
                 setLoading(false);
             }
@@ -77,7 +79,7 @@ function Search() {
                 )}
                 onClickOutside={handleHideResult}
             >
-                <div className={cx('search')}>
+                <section className={cx('search')}>
                     <input
                         ref={searchRef}
                         value={searchValue}
@@ -105,7 +107,7 @@ function Search() {
                     >
                         <SearchIcon />
                     </button>
-                </div>
+                </section>
             </HeadlessTippy>
         </div>
     );

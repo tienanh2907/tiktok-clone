@@ -2,27 +2,31 @@ $mainColor: rgb(22, 24, 35);
 
 .container {
     --search-border-radius: 92px;
-    width: 100%;
-    height: var(--default-layout-header-height);
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
-    display: flex;
-    justify-content: center;
-    background-color: var(--white);
+
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: var(--header-height);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
+
     background-color: var(--white);
 }
 
 .wrapper {
-    height: 100%;
-    width: var(--default-layout-width);
-    padding-left: 20px;
-    padding-right: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    width: var(--default-layout-width);
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 24px;
 }
 
 .logo {
@@ -40,20 +44,24 @@ $mainColor: rgb(22, 24, 35);
 .menu-btn {
     width: 28px;
     height: 24px;
-    font-size: 1.8rem;
-    margin-left: 16px;
     padding: 0 4px;
+    margin-left: 16px;
     margin-top: 2px;
+
     background-color: transparent;
+    font-size: 1.8rem;
 }
 
 .action-btn {
     position: relative;
+    margin-left: 16px;
+
     color: var(--main-color);
     background-color: transparent;
-    cursor: pointer;
-    margin-left: 16px;
+
     font-size: 0;
+
+    cursor: pointer;
 
     &:first-child {
         padding-top: 3px;
@@ -64,22 +72,20 @@ $mainColor: rgb(22, 24, 35);
     position: absolute;
     top: -6px;
     right: -10px;
+
     padding: 0px 6px;
     height: 1.8rem;
-    line-height: 1.8rem;
     border-radius: 10px;
+
+    color: var(--white);
+    background-color: var(--primary);
+
+    line-height: 1.8rem;
     font-size: 1.4rem;
     font-weight: 400;
-    color: var(--white);
-    font-family: 'ProximaNova', sans-serif;
-    background-color: var(--primary);
 }
 
 .user-avatar {
-    width: 32px;
-    height: 32px;
-    object-fit: cover;
-    border-radius: 50%;
     margin-left: 24px;
     cursor: pointer;
 }

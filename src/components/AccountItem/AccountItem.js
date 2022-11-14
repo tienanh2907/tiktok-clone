@@ -5,18 +5,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 
 import styles from './AccountItem.module.scss';
-import Image from '~/components/Image/Image';
+import Avatar from '~/components/Avatar';
 
 const cx = classNames.bind(styles);
 
 function AccountItem({ data }) {
     return (
         <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
-            <Image className={cx('avatar')} src={data.avatar} alt={data.full_name} />
+            <Avatar
+                src={data.avatar}
+                alt={data.full_name}
+                className={cx('avatar')}
+                size={40}
+            />
             <div className={cx('info')}>
                 <h4 className={cx('username')}>
                     {data.nickname}
-                    {data.tick && (
+                    {!!data.tick && (
                         <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
                     )}
                 </h4>

@@ -1,0 +1,83 @@
+.container {
+    padding: 16px 0;
+}
+
+.label {
+    padding: 0 8px;
+    margin-bottom: 8px;
+
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 600;
+
+    color: rgba(var(--main-color-rgb), 0.75);
+}
+
+.account-link {
+    display: flex;
+    align-items: center;
+
+    padding: 8px 8px;
+    border-radius: 4px;
+
+    transition: background-color 200ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(var(--main-color-rgb), 0.03);
+    }
+
+    &:active {
+        background-color: rgba(var(--main-color-rgb), 0.06);
+    }
+}
+
+.avatar {
+    margin-right: 12px;
+}
+
+.info {
+    flex: 1;
+    min-width: 0;
+    height: 32px;
+}
+
+.username {
+    font-family: 'SofiaPro', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+
+.check {
+    color: rgb(32, 213, 236);
+    font-size: 1.4rem;
+    margin-left: 8px;
+}
+
+.name {
+    max-width: 260px;
+
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+
+    color: rgba(var(--main-color-rgb), 0.75);
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.preview-wrapper {
+    padding: 20px;
+    width: 320px;
+}
+
+.more-btn {
+    padding: 8px 8px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 2rem;
+    color: var(--primary);
+    cursor: pointer;
+}

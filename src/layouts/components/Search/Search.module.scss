@@ -6,13 +6,15 @@ $mainColor: rgb(22, 24, 35);
 }
 
 .search {
-    height: 46px;
     display: flex;
     align-items: center;
+
+    height: 46px;
     padding-left: 16px;
-    background-color: rgba($mainColor, 0.06);
     border-radius: var(--search-border-radius);
     border: 1.5px solid transparent;
+
+    background-color: rgba($mainColor, 0.06);
 
     input {
         width: 292px;
@@ -35,10 +37,10 @@ $mainColor: rgb(22, 24, 35);
 
 .search-title {
     height: 30px;
+    padding: 5px 12px;
+    color: rgba($mainColor, 0.5);
     font-size: 1.4rem;
     font-weight: 600;
-    color: rgba($mainColor, 0.5);
-    padding: 5px 12px;
 }
 
 .loading,
@@ -53,10 +55,10 @@ $mainColor: rgb(22, 24, 35);
 }
 
 @keyframes spinner {
-    from{
+    from {
         transform: rotate(0);
     }
-    to{
+    to {
         transform: rotate(360deg);
     }
 }
@@ -68,13 +70,15 @@ $mainColor: rgb(22, 24, 35);
 }
 
 .search-button {
-    font-size: 0;
     height: 100%;
     border-top-right-radius: var(--search-border-radius);
     border-bottom-right-radius: var(--search-border-radius);
     padding-left: 12px;
     padding-right: 16px;
+
     color: rgba($mainColor, 0.34);
+
+    font-size: 0;
 
     &:hover {
         background-color: rgba($mainColor, 0.03);

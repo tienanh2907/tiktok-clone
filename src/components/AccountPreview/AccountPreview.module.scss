@@ -1,0 +1,46 @@
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0;
+    margin-bottom: 12px;
+}
+
+.account-card-follow {
+    height: 34px;
+    padding: 6px 8px;
+
+    font-weight: 600;
+}
+
+.check {
+    color: rgb(32, 213, 236);
+    font-size: 1.4rem;
+    margin-left: 4px;
+}
+
+.username {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    font-family: 'SofiaPro', Arial, Tahoma, sans-serif;
+    color: var(--main-color);
+}
+
+.name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 2rem;
+    color: var(--main-color);
+}
+
+.account-stat {
+    margin-top: 8px;
+
+    .value {
+        margin-right: 6px;
+    }
+
+    .label {
+        margin-right: 12px;
+    }
+}

@@ -13,7 +13,7 @@ import {
     InboxIcon,
     KeyboardIcon,
     LanguageIcon,
-    LiveIcon,
+    LiveStudioIcon,
     LogOutIcon,
     MenuIcon,
     PlusIcon,
@@ -22,7 +22,7 @@ import {
     SettingIcon,
     UserIcon,
 } from '~/components/Icons';
-import Image from '~/components/Image';
+import Avatar from '~/components/Avatar';
 import Search from '../Search';
 import config from '~/config';
 
@@ -72,7 +72,7 @@ const userMenu = [
         to: '/coin',
     },
     {
-        icon: <LiveIcon />,
+        icon: <LiveStudioIcon />,
         title: 'LIVE Studio',
     },
     {
@@ -109,17 +109,17 @@ function Header() {
         <header className={cx('container')}>
             <div className={cx('wrapper')}>
                 {/* logo */}
-                <div className={cx('logo')}>
+                <section className={cx('logo')}>
                     <Link to={config.routes.home}>
                         <img src={images.logo} alt="tiktok" />
                     </Link>
-                </div>
+                </section>
 
                 {/* search */}
                 <Search />
 
                 {/* Actions */}
-                <div className={cx('actions')}>
+                <section className={cx('actions')}>
                     <Button
                         to={config.routes.upload}
                         className={cx('upload')}
@@ -128,7 +128,8 @@ function Header() {
                         Upload
                     </Button>
                     {userLogin ? (
-                        <>
+                        //using a wrapper <div> tag around the reference element solves tippy error
+                        <div>
                             <Tippy delay={[0, 50]} content="Messages" placement="bottom">
                                 <Link
                                     to={config.routes.message}
@@ -143,11 +144,9 @@ function Header() {
                                     <span className={cx('badge')}>12</span>
                                 </button>
                             </Tippy>
-                        </>
+                        </div>
                     ) : (
-                        <>
-                            <Button primary>Log in</Button>
-                        </>
+                        <Button primary>Log in</Button>
                     )}
 
                     <Menu
@@ -155,10 +154,11 @@ function Header() {
                         onChange={handleMenuChange}
                     >
                         {userLogin ? (
-                            <Image
+                            <Avatar
                                 ref={avatarRef}
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/efc7a898687c3447746a365097dc0482~c5_100x100.jpeg?x-expires=1667379600&x-signature=SYB3%2FkFyoHiV%2FF%2FEN0UUVxfpM98%3D"
+                                size={32}
+                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7158034197800550405~c5_720x720.jpeg?x-expires=1668589200&x-signature=dObVbKBGKgxk3cNsBgKV8Pcdcj0%3D"
                                 alt="user-name"
                             />
                         ) : (
@@ -167,7 +167,7 @@ function Header() {
                             </button>
                         )}
                     </Menu>
-                </div>
+                </section>
             </div>
         </header>
     );

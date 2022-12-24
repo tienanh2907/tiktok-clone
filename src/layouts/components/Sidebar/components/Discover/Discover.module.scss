@@ -1,0 +1,13 @@
+.container {
+    padding: 16px 8px 8px;
+}
+
+.label {
+    padding-bottom: 16px;
+
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 600;
+
+    color: rgba(var(--color-text-primary-rgb), 0.75);
+}

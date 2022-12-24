@@ -7,12 +7,14 @@ import styles from './DefaultLayout.module.scss';
 const cx = classNames.bind(styles);
 
 function DefaultLayout({ children }) {
+    let pageContent = children;
     return (
         <div className={cx('wrapper')}>
             <Header />
-            <div className={cx('container')}>
+            <div className={cx('body-container')}>
                 <Sidebar />
-                <div className={cx('content')}>{children}</div>
+
+                {pageContent}
             </div>
         </div>
     );

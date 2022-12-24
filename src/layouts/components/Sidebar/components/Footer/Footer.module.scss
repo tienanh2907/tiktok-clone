@@ -1,0 +1,24 @@
+.container {
+    padding-top: 16px;
+    padding-left: 8px;
+}
+
+.link-wrapper {
+    margin-bottom: 8px;
+}
+
+.footer-element {
+    display: inline-block;
+    color: rgba(var(--color-text-primary-rgb), 0.5);
+    margin-top: 5px;
+    margin-right: 6px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+}
+
+.external-link {
+    &:hover {
+        text-decoration: underline;
+    }
+}

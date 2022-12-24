@@ -1,4 +1,4 @@
-import config from '~/config';
+import config from '~/configs';
 import Home from '~/pages/Home';
 import Following from '~/pages/Following';
 import Upload from '~/pages/Upload';

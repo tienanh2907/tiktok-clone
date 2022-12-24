@@ -11,7 +11,7 @@ import convertNumber from '~/utils/convertNumber';
 
 const cx = classNames.bind(styles);
 
-function AccountPreview({ data, type = 'less' }) {
+function AccountPreview({ data, esxtension }) {
     return (
         <div className={cx('container')}>
             <header className={cx('preview-header')}>
@@ -50,7 +50,7 @@ function AccountPreview({ data, type = 'less' }) {
 
 AccountPreview.propTypes = {
     data: PropTypes.object.isRequired,
-    type: PropTypes.bool,
+    extension: PropTypes.bool,
 };
 
 export default AccountPreview;

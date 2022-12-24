@@ -5,13 +5,16 @@
     justify-content: flex-start;
 }
 
-.container {
+.body-container {
+    width: 100%;
     width: var(--default-layout-width);
-    max-width: 100%;
-    display: flex;
     margin-top: var(--header-height);
+
+    display: flex;
+    justify-content: space-between;
 }
 
-.content {
-    flex: 1;
+.sidebar-wrapper {
+    width: 100px;
+    height: 100px;
 }

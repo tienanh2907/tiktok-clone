@@ -1,10 +1,12 @@
 @import 'normalize.css';
-$mainColor: rgb(22, 24, 35);
 
 :root {
     --primary: #fe2c55;
-    --main-color: rgb(22, 24, 35);
-    --main-color-rgb: 22, 24, 35;
+    --color-text-primary: rgb(22, 24, 35);
+    --color-text-secondary: rgba(22, 24, 35, 0.75);
+    --color-text-tertiary: rgba(22, 24, 35, 0.5);
+    --color-text-quaternary: rgba(22, 24, 35, 0.34);
+    --color-text-primary-rgb: 22, 24, 35;
     --black: #000;
     --white: #fff;
     //Default layout
@@ -44,7 +46,7 @@ body {
     line-height: 1.5;
     text-rendering: optimizespeed;
 
-    color: var(--main-color);
+    color: var(--color-text-primary);
 
     scroll-behavior: smooth;
     overflow-y: overlay;
@@ -62,7 +64,7 @@ button {
 }
 
 a {
-    color: var(--main-color);
+    color: var(--color-text-primary);
     text-decoration: none;
 }
 
@@ -112,4 +114,12 @@ body {
     .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
         top: -8px;
     }
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
 }

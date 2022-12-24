@@ -56,16 +56,12 @@ $mainColor: rgb(22, 24, 35);
     position: relative;
     margin-left: 16px;
 
-    color: var(--main-color);
+    color: var(--color-text-primary);
     background-color: transparent;
 
     font-size: 0;
 
     cursor: pointer;
-
-    &:first-child {
-        padding-top: 3px;
-    }
 }
 
 .badge {

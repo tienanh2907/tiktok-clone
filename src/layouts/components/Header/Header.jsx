@@ -24,7 +24,7 @@ import {
 } from '~/components/Icons';
 import Avatar from '~/components/Avatar';
 import Search from '../Search';
-import config from '~/config';
+import config from '~/configs';
 
 const cx = classNames.bind(styles);
 
@@ -139,7 +139,7 @@ function Header() {
                                 </Link>
                             </Tippy>
                             <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
-                                <button className={cx('action-btn')}>
+                                <button className={cx('action-btn')} style={{ top: 3 }}>
                                     <InboxIcon />
                                     <span className={cx('badge')}>12</span>
                                 </button>

@@ -11,7 +11,7 @@ const accounts = [
         name: 'Theanh28 Entertainment',
         check: true,
         avatar: 'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-aiso/65d3c6b1d1e205c75536ccf1f26d552d~c5_100x100.jpeg?x-expires=1668528000&x-signature=Zn4bbiOfVctBR%2B4XeZC0Oa0V7YQ%3D',
-        follower: 7900000,
+        follower: 79000000,
         like: 573.4e6,
     },
     {

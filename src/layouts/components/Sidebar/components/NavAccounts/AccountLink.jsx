@@ -16,7 +16,7 @@ function AccountItem({ data }) {
     const handleRenderTooltip = (props) => (
         <div tabIndex="-1" {...props}>
             <PopperWrapper className={cx('preview-wrapper')}>
-                <AccountPreview data={data} type="less" />
+                <AccountPreview data={data} />
             </PopperWrapper>
         </div>
     );
